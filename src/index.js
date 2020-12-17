@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx, ThemeProvider } from '@emotion/core';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import theme from './styles/theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
