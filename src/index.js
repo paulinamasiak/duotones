@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, ThemeProvider } from '@emotion/core';
+import { jsx } from '@emotion/core';
+import { ThemeProvider } from 'emotion-theming';
 
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import theme from './styles/theme';
+import theme from 'styles/theme';
 
 ReactDOM.render(
   <React.StrictMode>

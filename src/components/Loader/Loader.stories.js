@@ -1,12 +1,11 @@
 import React from 'react';
-
 import Loader from './Loader';
 
 export default {
-  title: 'Example/Loader',
+  title: 'Components/Loader',
   component: Loader,
 };
 
 const Template = (args) => <Loader {...args} />;
 
-export const Basic = Template.bind({});
+export const Default = Template.bind({});
