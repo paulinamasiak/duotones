@@ -10,8 +10,22 @@ const CssBaseline = () => {
     <Global
       styles={css`
         ${normalize}
+
+        html {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
+        }
+
         body {
-          background: ${theme.colors.background.default};
+          background-color: ${theme.colors.background.default};
+          color: ${theme.colors.text.primary};
         }
       `}
     />
