@@ -1,5 +1,6 @@
 import colors from './colors';
 import typography from './typography';
+import transitions from './transitions';
 
 const theme = {
   breakpoints: {
@@ -11,9 +12,7 @@ const theme = {
   },
   typography,
   shape: {},
-  transitions: {
-    // TODO
-  },
+  transitions,
   zIndex: {
     // TODO
   },

@@ -9,6 +9,9 @@ const baseStyles = ({ theme }) => ({
   height: '48px',
   borderRadius: '16px/16px',
   padding: '0 20px',
+  ...theme.transitions.create('background-color', {
+    duration: theme.transitions.duration.short,
+  }),
 });
 
 const colorStyles = ({ theme, color = 'default' }) => ({
@@ -33,6 +36,11 @@ const Button = styled(ButtonBase)(baseStyles, colorStyles, fullWidthStyles);
 Button.propTypes = {
   color: PropTypes.oneOf(['default', 'primary', 'secondary']),
   fullWidth: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  color: 'default',
+  fullWidth: false,
 };
 
 export default Button;
