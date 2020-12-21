@@ -1,0 +1,32 @@
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled/macro';
+import { darken } from 'polished';
+import ButtonBase from 'components/ButtonBase';
+
+const baseStyles = ({ theme }) => ({
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.fontWeightBold,
+  height: '48px',
+  borderRadius: '16px/16px',
+  padding: '0 20px',
+});
+
+const colorStyles = ({ theme, color = 'default' }) => ({
+  backgroundColor: theme.colors[color].main,
+  color: theme.colors.common.white,
+
+  '&:hover': {
+    backgroundColor: darken(
+      theme.colors.action.hoverDarken,
+      theme.colors[color].main,
+    ),
+  },
+});
+
+const Button = styled(ButtonBase)(baseStyles, colorStyles);
+
+Button.propTypes = {
+  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
+};
+
+export default Button;

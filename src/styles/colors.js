@@ -3,6 +3,9 @@ const colors = {
     black: '#000',
     white: '#fff',
   },
+  default: {
+    main: '#373a43',
+  },
   primary: {
     light: '#cfc8ff',
     main: '#6c5dd3',
@@ -35,9 +38,12 @@ const colors = {
   },
   divider: 'rgba(228, 228, 228, 0.1)',
   background: {
-    default: '#242731',
+    card: '#242731',
+    default: '#1f2128',
   },
-  action: {},
+  action: {
+    hoverDarken: 0.05,
+  },
 };
 
 export default colors;

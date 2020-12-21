@@ -1,4 +1,6 @@
 import colors from './colors';
+import typography from './typography';
+
 const theme = {
   breakpoints: {
     // TODO
@@ -7,13 +9,7 @@ const theme = {
   shadows: {
     // TODO
   },
-  typography: {
-    fontFamily: '"Poppins", "Helvetica", "Arial", sans-serif',
-    fontSize: '14px',
-    fontWeightLight: '300',
-    fontWeightRegular: '400',
-    fontWieghtBold: '600',
-  },
+  typography,
   shape: {},
   transitions: {
     // TODO
