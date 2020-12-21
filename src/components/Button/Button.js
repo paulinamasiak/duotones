@@ -6,8 +6,8 @@ import ButtonBase from 'components/ButtonBase';
 const baseStyles = ({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
   fontWeight: theme.typography.fontWeightBold,
+  borderRadius: theme.shape.borderRadius.medium,
   height: '48px',
-  borderRadius: '16px/16px',
   padding: '0 20px',
   ...theme.transitions.create('background-color', {
     duration: theme.transitions.duration.short,
