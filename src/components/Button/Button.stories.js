@@ -24,3 +24,10 @@ Secondary.args = {
   children: 'Button',
   color: 'secondary',
 };
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  children: 'Button',
+  color: 'primary',
+  fullWidth: true,
+};

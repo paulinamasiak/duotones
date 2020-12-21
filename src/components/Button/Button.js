@@ -23,10 +23,16 @@ const colorStyles = ({ theme, color = 'default' }) => ({
   },
 });
 
-const Button = styled(ButtonBase)(baseStyles, colorStyles);
+const fullWidthStyles = ({ fullWidth }) =>
+  fullWidth && {
+    width: '100%',
+  };
+
+const Button = styled(ButtonBase)(baseStyles, colorStyles, fullWidthStyles);
 
 Button.propTypes = {
   color: PropTypes.oneOf(['default', 'primary', 'secondary']),
+  fullWidth: PropTypes.bool,
 };
 
 export default Button;
