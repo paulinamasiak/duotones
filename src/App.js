@@ -1,13 +1,13 @@
-import Sidebar from 'components/Sidebar';
-import TopBar from 'components/TopBar';
+import AppSidebar from 'layout/AppSidebar';
+import AppHeader from 'layout/AppHeader';
 import CssBaseline from 'styles/CssBaseline';
 
 function App() {
   return (
     <div className="App">
       <CssBaseline />
-      <Sidebar />
-      <TopBar />
+      <AppHeader />
+      <AppSidebar />
     </div>
   );
 }
