@@ -1,10 +1,16 @@
 import React from 'react';
 import TopBar from 'components/TopBar';
 
-// TODO
-
 const AppHeader = () => {
-  return <TopBar></TopBar>;
+  return (
+    <TopBar
+      css={{
+        position: 'fixed',
+        left: '256px',
+        right: '0px',
+      }}
+    />
+  );
 };
 
 export default AppHeader;
