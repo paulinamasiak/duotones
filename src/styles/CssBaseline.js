@@ -25,6 +25,7 @@ const CssBaseline = () => {
           color: ${theme.colors.text.primary};
           font-family: ${theme.typography.fontFamily};
           font-size: ${theme.typography.fontSize};
+          margin: 0;
         }
       `}
     />
