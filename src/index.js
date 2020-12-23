@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 import { jsx } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from 'styles/theme';
