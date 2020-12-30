@@ -1,0 +1,109 @@
+const duotonePalletes = [
+  {
+    name: 'red',
+    lightTone: '#241d1d',
+    darkTone: '#ff0000',
+  },
+  {
+    name: 'red/pink',
+    lightTone: '#271e1e',
+    darkTone: '#d7033a',
+  },
+  {
+    name: 'red/black + blue',
+    lightTone: '#00056c',
+    darkTone: '#db2121',
+  },
+  {
+    name: 'red/black + green',
+    lightTone: '#334824',
+    darkTone: '#ff000c',
+  },
+  {
+    name: 'green',
+    lightTone: '#4d4d4d',
+    darkTone: '#1ac922',
+  },
+  {
+    name: 'green #2',
+    lightTone: '#006662',
+    darkTone: '#8dff8a',
+  },
+  {
+    name: 'green #3',
+    lightTone: '#453c3c',
+    darkTone: '#00b170',
+  },
+  {
+    name: 'light purple',
+    lightTone: '#453c45',
+    darkTone: '#a147b1',
+  },
+  {
+    name: 'grey purple',
+    lightTone: '#656565',
+    darkTone: '#dd89ec',
+  },
+  {
+    name: 'purple',
+    lightTone: '#1c0c29',
+    darkTone: '#720f84',
+  },
+  {
+    name: 'yellow',
+    lightTone: '#566600',
+    darkTone: '#eeff7f',
+  },
+  {
+    name: 'yellow #2',
+    lightTone: '#656565',
+    darkTone: '#e3dc13',
+  },
+  {
+    name: 'orange',
+    lightTone: '#595959',
+    darkTone: '#e3b013',
+  },
+  {
+    name: 'saturated orange',
+    lightTone: '#404040',
+    darkTone: '#e39213',
+  },
+  {
+    name: 'light orange + greys',
+    lightTone: '#818181',
+    darkTone: '#e9aa46',
+  },
+  {
+    name: 'blue',
+    lightTone: '#453c3c',
+    darkTone: '#006cb1',
+  },
+  {
+    name: 'grey-blue',
+    lightTone: '#6c6c6c',
+    darkTone: '#259fed',
+  },
+  {
+    name: 'cyan',
+    lightTone: '#7e7e7e',
+    darkTone: '#25ede6',
+  },
+  {
+    name: 'cyan-darker',
+    lightTone: '#2c2522',
+    darkTone: '#117571',
+  },
+  {
+    name: 'beetwen orange/red',
+    lightTone: '#625353',
+    darkTone: '#e97446',
+  },
+  {
+    name: 'dark brown',
+    lightTone: '#1e1511',
+    darkTone: '#5b2713',
+  },
+];
+
+export default duotonePalletes;
