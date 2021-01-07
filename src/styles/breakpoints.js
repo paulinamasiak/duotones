@@ -1,3 +1,5 @@
+import facepaint from 'facepaint';
+
 const keys = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 const values = {
@@ -8,9 +10,12 @@ const values = {
   xl: 1920,
 };
 
+const mq = facepaint(keys.map((key) => `@media(min-width: ${values[key]}px)`));
+
 const breakpoints = {
   keys,
   values,
+  mq,
 };
 
 export default breakpoints;
