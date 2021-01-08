@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 import RowContext from '../Row/RowContext';
 
+const COL_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const COL_LIMIT = 12;
+
+const calcColWidth = (span) => {
+  return typeof span === 'number'
+    ? `${((10e7 / COL_LIMIT) * span) / 10e5}%`
+    : null;
+};
+
 const basicStyles = {
   boxSizing: 'border-box',
 };
@@ -11,11 +20,9 @@ const gutterStyles = ({ gutter }) => ({
   padding: `${gutter / 2}px`,
 });
 
-const gridStyles = ({ theme, ...other }) => {
+const sizeStyles = ({ theme, ...other }) => {
   const { breakpoints } = theme;
-  const widths = breakpoints.keys.map((key) =>
-    other[key] ? `${(100 / 12) * other[key]}%` : undefined,
-  );
+  const widths = breakpoints.keys.map((key) => calcColWidth(other[key]));
 
   return breakpoints.mq({
     flexGrow: 0,
@@ -24,7 +31,7 @@ const gridStyles = ({ theme, ...other }) => {
   });
 };
 
-const StyledCol = styled.div(basicStyles, gutterStyles, gridStyles);
+const StyledCol = styled.div(basicStyles, gutterStyles, sizeStyles);
 
 const Col = ({ children, ...other }) => {
   const { gutter } = React.useContext(RowContext);
@@ -37,11 +44,11 @@ const Col = ({ children, ...other }) => {
 };
 
 Col.propTypes = {
-  xs: PropTypes.number,
-  sm: PropTypes.number,
-  md: PropTypes.number,
-  lg: PropTypes.number,
-  xl: PropTypes.number,
+  xs: PropTypes.oneOf(COL_SIZES),
+  sm: PropTypes.oneOf(COL_SIZES),
+  md: PropTypes.oneOf(COL_SIZES),
+  lg: PropTypes.oneOf(COL_SIZES),
+  xl: PropTypes.oneOf(COL_SIZES),
 };
 
 export default Col;
