@@ -1,6 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import { Search as SearchIcon } from 'react-feather';
 
 import CssBaseline from 'styles/CssBaseline';
 import AppSidebar from 'layout/AppSidebar';
@@ -28,7 +29,9 @@ function App() {
           paddingTop: '98px',
         }}
       >
-        <AppHeader />
+        <AppHeader>
+          <SearchIcon />
+        </AppHeader>
         <AppContent>
           <ImageDuotonesList src={photo} colorPalletes={duotonePalletes} />
         </AppContent>

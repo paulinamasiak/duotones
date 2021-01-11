@@ -3,7 +3,7 @@
 import { jsx } from '@emotion/core';
 import TopBar from 'components/TopBar';
 
-const AppHeader = () => {
+const AppHeader = (props) => {
   return (
     <TopBar
       css={{
@@ -12,6 +12,7 @@ const AppHeader = () => {
         top: '0px',
         right: '0px',
       }}
+      {...props}
     />
   );
 };
