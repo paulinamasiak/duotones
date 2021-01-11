@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled/macro';
 import duotone from 'utils/duotone';
 
 const getCanvasPixels = (canvas) => {
@@ -7,7 +8,14 @@ const getCanvasPixels = (canvas) => {
   return context.getImageData(0, 0, canvas.width, canvas.height);
 };
 
-const DuotoneImg = ({ src, lightTone, darkTone }) => {
+const StyledCanvas = styled.canvas(
+  ({ fullWidth }) =>
+    fullWidth && {
+      width: '100%',
+    },
+);
+
+const DuotoneImg = ({ src, lightTone, darkTone, ...other }) => {
   const canvasRef = useRef();
 
   useEffect(() => {
@@ -30,18 +38,20 @@ const DuotoneImg = ({ src, lightTone, darkTone }) => {
     img.src = src;
   }, [src, lightTone, darkTone]);
 
-  return <canvas ref={canvasRef} />;
+  return <StyledCanvas {...other} ref={canvasRef} />;
 };
 
 DuotoneImg.propTypes = {
   src: PropTypes.string,
   lightTone: PropTypes.string,
   darkTone: PropTypes.string,
+  fullWidth: PropTypes.bool,
 };
 
 DuotoneImg.defaultProps = {
   lightTone: '#000000',
   darkTone: '#ffffff',
+  fullWidth: false,
 };
 
 export default DuotoneImg;

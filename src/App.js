@@ -6,6 +6,10 @@ import CssBaseline from 'styles/CssBaseline';
 import AppSidebar from 'layout/AppSidebar';
 import AppHeader from 'layout/AppHeader';
 import AppContent from 'layout/AppContent';
+import ImageDuotonesList from 'domain/ImageDuotonesList';
+
+import duotonePalletes from 'enums/duotonePalletes';
+import photo from 'components/DuotoneImg/photo.jpg';
 
 function App() {
   return (
@@ -25,7 +29,9 @@ function App() {
         }}
       >
         <AppHeader />
-        <AppContent />
+        <AppContent>
+          <ImageDuotonesList src={photo} colorPalletes={duotonePalletes} />
+        </AppContent>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 
 const ButtonBase = styled.button({
   backgroundColor: 'transparent', // Reset default style

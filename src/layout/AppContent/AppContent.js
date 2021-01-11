@@ -1,15 +1,7 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import DuotoneImg from 'components/DuotoneImg';
-import photo from 'components/DuotoneImg/photo.jpg';
+import styled from '@emotion/styled/macro';
 
-const AppContent = () => {
-  return (
-    <div css={{ padding: '64px' }}>
-      <DuotoneImg src={photo} />
-    </div>
-  );
-};
+const AppContent = styled.div({
+  padding: '64px',
+});
 
 export default AppContent;
