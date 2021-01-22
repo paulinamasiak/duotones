@@ -6,7 +6,7 @@ const TopBar = styled.div(({ theme }) => ({
   alignItems: 'center',
   zIndex: '10',
   height: '96px',
-  padding: '0 64px',
+  padding: '0 48px',
   boxShadow: `inset 0 -1px 0 0 ${theme.colors.divider}`,
 }));
 

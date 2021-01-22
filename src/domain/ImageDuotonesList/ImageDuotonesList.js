@@ -6,7 +6,7 @@ import Col from 'components/Grid/Col';
 
 const ImageDuotonesList = ({ src, colorPalletes }) => {
   return (
-    <Row gutter={24}>
+    <Row gutter={32}>
       {colorPalletes.map(({ id, lightTone, darkTone }) => (
         <Col key={id} md={12} lg={6} xl={4}>
           <DuotoneImg

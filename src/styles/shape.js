@@ -1,8 +1,8 @@
 const shape = {
   borderRadius: {
-    small: '8px',
-    medium: '16px',
-    large: '24px',
+    sm: '8px',
+    md: '16px',
+    lg: '24px',
   },
 };
 
