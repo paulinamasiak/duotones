@@ -9,11 +9,14 @@ const colors = {
   primary: {
     light: '#cfc8ff',
     main: '#6c5dd3',
-    // TODO: dark
+    dark: '#3733a1',
+    contrastText: '#fff',
   },
   secondary: {
-    main: '#3f8cff',
-    // TODO: light, dark
+    light: '#80bcff',
+    main: '#3f8Cff',
+    dark: '#0060cb',
+    contrastText: '#fff',
   },
   error: {
     main: '#ff754c',
