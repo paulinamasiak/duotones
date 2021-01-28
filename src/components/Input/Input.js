@@ -28,9 +28,7 @@ const basicStyles = ({ theme }) => ({
   }),
 
   '&::placeholder': {
-    color: rgba(theme.colors.grey['50'], 0.2),
-    //fontStyle: 'italic',
-    //fontWeight: theme.typography.fontWeightNormal,
+    color: rgba(theme.colors.grey['50'], 0.3),
   },
 
   '&::-ms-clear': {
@@ -48,13 +46,10 @@ const basicStyles = ({ theme }) => ({
 
 const variantStyles = ({ theme, variant = VARIANTS.OUTLINED }) => ({
   ...(variant === VARIANTS.OUTLINED && {
-    backgroundColor: 'rgba(228, 228, 228, 0.05)',
+    backgroundColor: rgba(theme.colors.grey['50'], 0.05),
 
     '&:hover': {
-      backgroundColor: rgba(
-        theme.colors.grey['50'],
-        theme.colors.action.hoverOpacity,
-      ),
+      backgroundColor: rgba(theme.colors.grey['50'], 0.08),
     },
   }),
 });
@@ -80,11 +75,11 @@ const disabledStyles = ({
 }) =>
   variant === VARIANTS.OUTLINED &&
   disabled && {
-    backgroundColor: 'rgba(228, 228, 228, 0.02)',
+    backgroundColor: rgba(theme.colors.grey['50'], 0.03),
     color: theme.colors.text.disabled,
 
     '&:hover': {
-      backgroundColor: 'rgba(228, 228, 228, 0.02)',
+      backgroundColor: rgba(theme.colors.grey['50'], 0.03),
     },
   };
 
@@ -102,7 +97,7 @@ const Input = styled.input(
 );
 
 Input.propTypes = {
-  color: PropTypes.oneOf([VARIANTS.PRIMARY, VARIANTS.SECONDARY]),
+  color: PropTypes.oneOf([COLORS.PRIMARY, COLORS.SECONDARY]),
   variant: PropTypes.oneOf([VARIANTS.OUTLINED, VARIANTS.BARE]),
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
