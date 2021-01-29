@@ -8,11 +8,6 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  children: 'Button',
-};
-
 export const Primary = Template.bind({});
 Primary.args = {
   children: 'Button',
@@ -30,4 +25,11 @@ FullWidth.args = {
   children: 'Button',
   color: 'primary',
   fullWidth: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  children: 'Button',
+  color: 'primary',
+  disabled: true,
 };

@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
-import { darken } from 'polished';
+import { shade, tint, rgba } from 'polished';
 import ButtonBase from 'components/ButtonBase';
+
+const COLORS = {
+  PRIMARY: 'primary',
+  SECONDARY: 'secondary',
+};
 
 const baseStyles = ({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
@@ -14,32 +19,53 @@ const baseStyles = ({ theme }) => ({
   }),
 });
 
-const colorStyles = ({ theme, color = 'default' }) => ({
+const colorStyles = ({ theme, color = COLORS.PRIMARY }) => ({
   backgroundColor: theme.colors[color].main,
-  color: theme.colors.common.white,
+  color: theme.colors[color].contrastText,
 
   '&:hover': {
-    backgroundColor: darken(
-      theme.colors.action.hoverDarken,
-      theme.colors[color].main,
-    ),
+    backgroundColor: tint(0.1, theme.colors[color].main),
+  },
+
+  '&:active': {
+    backgroundColor: shade(0.1, theme.colors[color].main),
   },
 });
+
+const disabledStyles = ({ theme, color = COLORS.PRIMARY, disabled = false }) =>
+  disabled && {
+    cursor: 'default',
+    color: rgba(
+      theme.colors[color].contrastText,
+      theme.colors.action.disabledOpacity,
+    ),
+    backgroundColor: rgba(
+      theme.colors.default.main,
+      theme.colors.action.disabledOpacity,
+    ),
+  };
 
 const fullWidthStyles = ({ fullWidth }) =>
   fullWidth && {
     width: '100%',
   };
 
-const Button = styled(ButtonBase)(baseStyles, colorStyles, fullWidthStyles);
+const Button = styled(ButtonBase)(
+  baseStyles,
+  colorStyles,
+  fullWidthStyles,
+  disabledStyles,
+);
 
 Button.propTypes = {
-  color: PropTypes.oneOf(['default', 'primary', 'secondary']),
+  color: PropTypes.oneOf([COLORS.PRIMARY, COLORS.SECONDARY]),
+  disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  color: 'default',
+  color: COLORS.PRIMARY,
+  disabled: false,
   fullWidth: false,
 };
 

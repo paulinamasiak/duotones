@@ -65,8 +65,7 @@ const colors = {
     default: '#20222a',
   },
   action: {
-    hoverDarken: 0.05,
-    hoverOpacity: 0.08,
+    disabledOpacity: 0.3,
   },
 };
 
