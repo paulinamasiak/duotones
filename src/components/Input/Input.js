@@ -2,24 +2,27 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled/macro';
 import { rgba } from 'polished';
 
-const VARIANTS = {
+const VARIANT = {
   OUTLINED: 'outlined',
   BARE: 'bare',
 };
 
-const COLORS = {
+const COLOR = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
 
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const basicStyles = ({ theme }) => ({
   fontFamily: 'inherit',
-  fontSize: theme.typography.fontSizes.md,
   fontWeight: theme.typography.fontWeightBold,
-  appearance: 'none',
   borderRadius: theme.shape.borderRadius.sm,
-  padding: '0 24px',
-  height: '56px',
+  appearance: 'none',
   borderStyle: 'none',
   border: '2px solid transparent',
   backgroundColor: 'transparent',
@@ -44,8 +47,22 @@ const basicStyles = ({ theme }) => ({
   },
 });
 
-const variantStyles = ({ theme, variant = VARIANTS.OUTLINED }) => ({
-  ...(variant === VARIANTS.OUTLINED && {
+const colorStyles = ({
+  theme,
+  color = COLOR.PRIMARY,
+  variant = VARIANT.OUTLINED,
+}) => ({
+  color: theme.colors.text.primary,
+
+  ...(variant === VARIANT.OUTLINED && {
+    '&:focus': {
+      borderColor: theme.colors[color].main,
+    },
+  }),
+});
+
+const variantStyles = ({ theme, variant = VARIANT.OUTLINED }) => ({
+  ...(variant === VARIANT.OUTLINED && {
     backgroundColor: rgba(theme.colors.grey['50'], 0.05),
 
     '&:hover': {
@@ -54,26 +71,30 @@ const variantStyles = ({ theme, variant = VARIANTS.OUTLINED }) => ({
   }),
 });
 
-const colorStyles = ({
-  theme,
-  color = COLORS.PRIMARY,
-  variant = VARIANTS.OUTLINED,
-}) => ({
-  color: theme.colors.text.primary,
-
-  ...(variant === VARIANTS.OUTLINED && {
-    '&:focus': {
-      borderColor: theme.colors[color].main,
-    },
+const sizeStyles = ({ theme, size = SIZE.MEDIUM }) => ({
+  ...(size === SIZE.SMALL && {
+    fontSize: theme.typography.fontSizes.sm,
+    height: '40px',
+    padding: '0 16px',
+  }),
+  ...(size === SIZE.MEDIUM && {
+    fontSize: theme.typography.fontSizes.md,
+    height: '48px',
+    padding: '0 20px',
+  }),
+  ...(size === SIZE.LARGE && {
+    fontSize: theme.typography.fontSizes.md,
+    height: '56px',
+    padding: '0 24px',
   }),
 });
 
 const disabledStyles = ({
   theme,
-  variant = VARIANTS.OUTLINED,
+  variant = VARIANT.OUTLINED,
   disabled = false,
 }) =>
-  variant === VARIANTS.OUTLINED &&
+  variant === VARIANT.OUTLINED &&
   disabled && {
     backgroundColor: rgba(theme.colors.grey['50'], 0.03),
     color: theme.colors.text.disabled,
@@ -92,21 +113,24 @@ const Input = styled.input(
   basicStyles,
   colorStyles,
   variantStyles,
+  sizeStyles,
   disabledStyles,
   fullWidthStyles,
 );
 
 Input.propTypes = {
-  color: PropTypes.oneOf([COLORS.PRIMARY, COLORS.SECONDARY]),
-  variant: PropTypes.oneOf([VARIANTS.OUTLINED, VARIANTS.BARE]),
+  color: PropTypes.oneOf([COLOR.PRIMARY, COLOR.SECONDARY]),
+  variant: PropTypes.oneOf([VARIANT.OUTLINED, VARIANT.BARE]),
+  size: PropTypes.oneOf([SIZE.SMALL, SIZE.MEDIUM, SIZE.LARGE]),
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   fullWidth: PropTypes.bool,
 };
 
 Input.defaultProps = {
-  variant: VARIANTS.OUTLINED,
-  color: COLORS.PRIMARY,
+  color: COLOR.PRIMARY,
+  variant: VARIANT.OUTLINED,
+  size: SIZE.MEDIUM,
   disabled: false,
   readOnly: false,
   fullWidth: false,

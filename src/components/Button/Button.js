@@ -39,19 +39,19 @@ const colorStyles = ({ theme, color = COLOR.PRIMARY }) => ({
 const sizeStyles = ({ theme, size = SIZE.MEDIUM }) => ({
   ...(size === SIZE.SMALL && {
     fontSize: theme.typography.fontSizes.sm,
-    height: '32px',
-    padding: '0 12px',
+    height: '40px',
+    padding: '0 16px',
   }),
   ...(size === SIZE.MEDIUM && {
     fontSize: theme.typography.fontSizes.md,
-    height: '40px',
-    padding: '0 16px',
+    height: '48px',
+    padding: '0 20px',
   }),
   ...(size === SIZE.LARGE && {
     fontSize: theme.typography.fontSizes.md,
     fontSize: '14px',
-    height: '48px',
-    padding: '0 20px',
+    height: '56px',
+    padding: '0 24px',
   }),
 });
 

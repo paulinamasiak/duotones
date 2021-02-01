@@ -26,6 +26,24 @@ Bare.args = {
   variant: 'bare',
 };
 
+export const Small = Template.bind({});
+Small.args = {
+  placeholder: 'Input',
+  size: 'small',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  placeholder: 'Input',
+  size: 'medium',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  placeholder: 'Input',
+  size: 'large',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
   value: 'Disabled',
