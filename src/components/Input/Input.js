@@ -14,7 +14,7 @@ const COLORS = {
 
 const basicStyles = ({ theme }) => ({
   fontFamily: 'inherit',
-  fontSize: theme.typography.fontSize,
+  fontSize: theme.typography.fontSizes.md,
   fontWeight: theme.typography.fontWeightBold,
   appearance: 'none',
   borderRadius: theme.shape.borderRadius.sm,
@@ -106,7 +106,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   variant: VARIANTS.OUTLINED,
-  color: VARIANTS.PRIMARY,
+  color: COLORS.PRIMARY,
   disabled: false,
   readOnly: false,
   fullWidth: false,

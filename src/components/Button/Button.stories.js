@@ -20,11 +20,22 @@ Secondary.args = {
   color: 'secondary',
 };
 
-export const FullWidth = Template.bind({});
-FullWidth.args = {
+export const Small = Template.bind({});
+Small.args = {
   children: 'Button',
-  color: 'primary',
-  fullWidth: true,
+  size: 'small',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  children: 'Button',
+  size: 'medium',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  children: 'Button',
+  size: 'large',
 };
 
 export const Disabled = Template.bind({});
@@ -32,4 +43,11 @@ Disabled.args = {
   children: 'Button',
   color: 'primary',
   disabled: true,
+};
+
+export const FullWidth = Template.bind({});
+FullWidth.args = {
+  children: 'Button',
+  color: 'primary',
+  fullWidth: true,
 };

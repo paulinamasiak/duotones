@@ -3,23 +3,27 @@ import styled from '@emotion/styled/macro';
 import { shade, tint, rgba } from 'polished';
 import ButtonBase from 'components/ButtonBase';
 
-const COLORS = {
+const COLOR = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
 
+const SIZE = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};
+
 const baseStyles = ({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeightBold,
-  borderRadius: theme.shape.borderRadius.md,
-  height: '48px',
-  padding: '0 20px',
+  fontWeight: theme.typography.fontWeighBold,
+  borderRadius: theme.shape.borderRadius.sm,
   ...theme.transitions.create('background-color', {
     duration: theme.transitions.duration.short,
   }),
 });
 
-const colorStyles = ({ theme, color = COLORS.PRIMARY }) => ({
+const colorStyles = ({ theme, color = COLOR.PRIMARY }) => ({
   backgroundColor: theme.colors[color].main,
   color: theme.colors[color].contrastText,
 
@@ -32,7 +36,26 @@ const colorStyles = ({ theme, color = COLORS.PRIMARY }) => ({
   },
 });
 
-const disabledStyles = ({ theme, color = COLORS.PRIMARY, disabled = false }) =>
+const sizeStyles = ({ theme, size = SIZE.MEDIUM }) => ({
+  ...(size === SIZE.SMALL && {
+    fontSize: theme.typography.fontSizes.sm,
+    height: '32px',
+    padding: '0 12px',
+  }),
+  ...(size === SIZE.MEDIUM && {
+    fontSize: theme.typography.fontSizes.md,
+    height: '40px',
+    padding: '0 16px',
+  }),
+  ...(size === SIZE.LARGE && {
+    fontSize: theme.typography.fontSizes.md,
+    fontSize: '14px',
+    height: '48px',
+    padding: '0 20px',
+  }),
+});
+
+const disabledStyles = ({ theme, color = COLOR.PRIMARY, disabled = false }) =>
   disabled && {
     cursor: 'default',
     color: rgba(
@@ -53,18 +76,21 @@ const fullWidthStyles = ({ fullWidth }) =>
 const Button = styled(ButtonBase)(
   baseStyles,
   colorStyles,
+  sizeStyles,
   fullWidthStyles,
   disabledStyles,
 );
 
 Button.propTypes = {
-  color: PropTypes.oneOf([COLORS.PRIMARY, COLORS.SECONDARY]),
+  color: PropTypes.oneOf([COLOR.PRIMARY, COLOR.SECONDARY]),
+  size: PropTypes.oneOf([SIZE.SMALL, SIZE.MEDIUM, SIZE.LARGE]),
   disabled: PropTypes.bool,
   fullWidth: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  color: COLORS.PRIMARY,
+  color: COLOR.PRIMARY,
+  size: SIZE.MEDIUM,
   disabled: false,
   fullWidth: false,
 };
