@@ -16,7 +16,7 @@ const SIZE = {
 
 const baseStyles = ({ theme }) => ({
   fontFamily: theme.typography.fontFamily,
-  fontWeight: theme.typography.fontWeighBold,
+  fontWeight: theme.typography.fontWeightBold,
   borderRadius: theme.shape.borderRadius.sm,
   ...theme.transitions.create('background-color', {
     duration: theme.transitions.duration.short,
