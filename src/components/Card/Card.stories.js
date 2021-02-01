@@ -6,6 +6,16 @@ export default {
   component: Card,
 };
 
-const Template = (args) => <Card {...args} />;
+const Template = (args) => (
+  <Card style={{ width: '128px', height: '128px' }} {...args} />
+);
 
-export const Default = Template.bind({});
+export const Elevated = Template.bind({});
+Elevated.args = {
+  variant: 'elevated',
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  variant: 'outlined',
+};
