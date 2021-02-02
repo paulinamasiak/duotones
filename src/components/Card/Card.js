@@ -11,7 +11,7 @@ const basicStyles = ({ theme }) => ({
   borderRadius: theme.shape.borderRadius.sm,
 });
 
-const varaintStyles = ({ theme, variant = VARIANT.ELEVATED, elevation }) => ({
+const varaintStyles = ({ theme, variant = VARIANT.ELEVATED }) => ({
   ...(variant === VARIANT.ELEVATED && {
     backgroundColor: theme.colors.background.card,
     boxShadow: '0 8px 10px 0 rgb(0 0 0 / 5%)',
@@ -24,12 +24,10 @@ const varaintStyles = ({ theme, variant = VARIANT.ELEVATED, elevation }) => ({
 const Card = styled.div(basicStyles, varaintStyles);
 
 Card.propTypes = {
-  elevation: PropTypes.number,
   variant: PropTypes.oneOf([VARIANT.ELEVATED, VARIANT.OUTLINED]),
 };
 
 Card.defaultProps = {
-  elevation: 0,
   variant: VARIANT.ELEVATED,
 };
 
