@@ -49,7 +49,6 @@ const sizeStyles = ({ theme, size = SIZE.MEDIUM }) => ({
   }),
   ...(size === SIZE.LARGE && {
     fontSize: theme.typography.fontSizes.md,
-    fontSize: '14px',
     height: '56px',
     padding: '0 24px',
   }),
